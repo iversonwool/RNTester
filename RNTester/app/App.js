@@ -10,7 +10,7 @@ import {
   Dimensions,
   Text
 } from 'react-native'
-// import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view'
+// import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-navigatorTest-view'
 // import Loading from './Loading'
 // import Toast from 'react-native-root-toast'
 
