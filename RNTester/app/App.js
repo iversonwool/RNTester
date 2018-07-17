@@ -24,25 +24,12 @@ export default class CustomView extends Component {
   // }
   render() {
     return (
-
-      <View
-        style={{
-          height: 300,
-          backgroundColor: '#f34',
-        }}
-      >
-        <View style={{ flex: 1, backgroundColor: 'powderblue' }}/>
-        <View style={{ flex: 2, backgroundColor: 'skyblue' }}/>
-        <View
-          style={{
-
-
-            flex: 3, backgroundColor: 'steelblue',
-          }}
-        />
+      <View style={{ height: 300, backgroundColor: '#f34' }}>
+        <View style={{ flex: 4, backgroundColor: 'powderblue' }}/>
+        <View style={{ flex: 8, backgroundColor: 'skyblue' }}/>
+        <View style={{ flex: 12, backgroundColor: 'steelblue' }}/>
         {/*<TouchableOpacity onPress={this.showLoading}><Text>click</Text></TouchableOpacity>*/}
       </View>
-
     )
   }
 }
