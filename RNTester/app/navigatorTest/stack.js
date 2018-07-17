@@ -7,9 +7,11 @@ import tabStack from './tab'
 
 const TabStack = createBottomTabNavigator(tabStack.screens, tabStack.options)
 
-const screens = {
-  TabStack: { screen: TabStack }
+import TextInputTester from '../UITester/TextInputTester'
 
+const screens = {
+  TabStack: { screen: TabStack },
+  TextInputTester: { screen: TextInputTester }
 }
 
 const options = {

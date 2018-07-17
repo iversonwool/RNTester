@@ -2,7 +2,7 @@ import { AppRegistry, YellowBox } from 'react-native';
 import App from './App';
 import FlatListDemo from './FlatListDemo'
 import A from './app/App'
-
+// import
 import Navigator from './app/navigatorTest'
 
 
@@ -10,4 +10,4 @@ import Navigator from './app/navigatorTest'
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader', ''])
 
 
-AppRegistry.registerComponent('RNTester', () => A)
+AppRegistry.registerComponent('RNTester', () => Navigator)

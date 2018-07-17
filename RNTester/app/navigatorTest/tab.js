@@ -3,24 +3,30 @@
  */
 
 import React from 'react'
-import { createStackNavigator } from 'react-navigation'
+import { createStackNavigator, Header } from 'react-navigation'
 
 
 import Homepage from './homepage'
 import Message from './message'
 import Mine from './mine'
 
+const navigationOps = {
+  navigationOptions: {
+    header: props => <Header {...props}/>
+  }
+}
+
 const HomepageTab = createStackNavigator({
   Homepage: { screen: Homepage }
-})
+}, navigationOps)
 
 const MessageTab = createStackNavigator({
   Message: { screen: Message }
-})
+}, navigationOps)
 
 const MineTab = createStackNavigator({
   Mine: { screen: Mine }
-})
+}, navigationOps)
 
 const screens = {
   Homepage: { screen: HomepageTab },
