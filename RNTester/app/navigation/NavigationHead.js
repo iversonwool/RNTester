@@ -2,11 +2,9 @@ import React from 'react'
 import {
   View,
   Image,
-  StatusBar
 } from 'react-native'
 import { Header } from 'react-navigation'
-import ImageManager from '../images'
-import { Device } from '../utils'
+import Device from './Device'
 
 const NavigationHead = props => (
   <View style={{ backgroundColor: 'transparent' }}>
@@ -18,7 +16,7 @@ const NavigationHead = props => (
         left: 0,
         top: 0
       }}
-      source={ImageManager.nav.img_nav}
+      source={require('./nav/img_nav.png')}
       resizeMode={'stretch'}
     />
     <Header {...props} />

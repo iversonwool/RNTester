@@ -3,20 +3,18 @@ import {
   createStackNavigator
 } from 'react-navigation'
 
-import ImageManager from "../images";
-import { Image, Platform, TouchableOpacity,View,Text } from 'react-native'
-import HomePage from '../screens/homePage'
-import PersonalPage from "../screens/personalPage";
-import HealthManagerPage from "../screens/healthManagerPage";
-import MsgPage from "../screens/msgPage";
+import { Image, Platform, View } from 'react-native'
+import HomePage from '../navigatorTest/homepage'
+import PersonalPage from "../navigatorTest/mine";
+import MsgPage from "../navigatorTest/message";
 
 import NavigationHead from './NavigationHead'
-import { Device } from "../utils"
+import Device from "./Device"
 
 function createTabIcon(icon, hicon) {
-  return ({focused: focused, /*tintColor: tintColor*/}) => {
+  return ({ focused: focused, /*tintColor: tintColor*/ }) => {
     const cicon = focused ? hicon : icon
-    return <Image source={cicon} />
+    return <Image source={cicon}/>
   }
 }
 
@@ -32,8 +30,8 @@ const navigationOps = {
         height: Device.navBarHeight - Device.statusBarHeight
       },
       headerBackTitle: null,
-      headerLeft: Platform.OS === 'android' ? <View /> : null,
-      headerRight: Platform.OS === 'android' ? <View /> : null,
+      headerLeft: Platform.OS === 'android' ? <View/> : null,
+      headerRight: Platform.OS === 'android' ? <View/> : null,
       headerTitleStyle: {
         flex: 1,
         textAlign: 'center',
@@ -44,6 +42,7 @@ const navigationOps = {
     }
   }
 }
+
 const Personal = (() => createStackNavigator({
   PersonalPage: {
     screen: PersonalPage,
@@ -53,14 +52,6 @@ const Personal = (() => createStackNavigator({
   }
 }, navigationOps))()
 
-const HealthManager = createStackNavigator({
-  PersonalPage: {
-    screen: HealthManagerPage,
-    navigationOptions: {
-      title: '健康管理'
-    }
-  }
-}, navigationOps)
 
 // 消息提醒 Stack Navigator
 const Message = createStackNavigator({
@@ -71,27 +62,19 @@ const screens = {
   Home: {
     navigationOptions: {
       title: '首页',
-      tabBarIcon: createTabIcon(ImageManager.tabbar.icon_home_default, ImageManager.tabbar.icon_home_selected),
     },
     screen: HomePage,
   },
   Msg: {
     navigationOptions: {
-      tabBarIcon: createTabIcon(ImageManager.tabbar.icon_msg_default, ImageManager.tabbar.icon_msg_selected),
+      // tabBarIcon: createTabIcon(ImageManager.tabbar.icon_msg_default, ImageManager.tabbar.icon_msg_selected),
       title: '消息',
     },
     screen: Message
   },
-  HealthManager: {
+  Personal: {
     navigationOptions: {
-      tabBarIcon: createTabIcon(ImageManager.tabbar.icon_health_default, ImageManager.tabbar.icon_health_selected),
-      title: '健康管理'
-    },
-    screen: HealthManager
-  },
-  Personal:{
-    navigationOptions: {
-      tabBarIcon: createTabIcon(ImageManager.tabbar.icon_me_default, ImageManager.tabbar.icon_me_selected),
+      // tabBarIcon: createTabIcon(ImageManager.tabbar.icon_me_default, ImageManager.tabbar.icon_me_selected),
       title: '个人中心',
     },
     screen: Personal

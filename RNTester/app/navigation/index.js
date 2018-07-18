@@ -1,9 +1,8 @@
-import {
-  createStackNavigator
-} from 'react-navigation'
+import { createStackNavigator } from 'react-navigation'
 
 import mainStack from './mainStackNavigator'
-export const MainStack = createStackNavigator(mainStack.screens, mainStack.config)
+
+const MainStack = createStackNavigator(mainStack.screens, mainStack.config)
 
 // ===========================================================
 const needLoginPages = ['Msg', 'MyApplication', 'GuardianInfo', 'PersonalInfo']
@@ -25,6 +24,4 @@ MainStack.router.getStateForAction = (action, state) => {
 }
 // ===========================================================
 
-export default {
-  MainStack
-}
+export default MainStack
