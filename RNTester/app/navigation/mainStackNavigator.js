@@ -12,7 +12,9 @@ import tabStack from "./mainTabNavigator"
 import NavigationHead from './NavigationHead'
 import Device from './Device'
 
-export const TabStack = createBottomTabNavigator(tabStack.screens, tabStack.config)
+const TabStack = createBottomTabNavigator(tabStack.screens, tabStack.config)
+
+import TextInputTester from '../UITester/TextInputTester'
 
 export const screens = {
   Home: {
@@ -20,7 +22,8 @@ export const screens = {
     navigationOptions: {
       header: null
     },
-  }
+  },
+  TextInputTester: { screen: TextInputTester }
 }
 
 const config = {
