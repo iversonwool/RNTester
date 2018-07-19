@@ -1,4 +1,4 @@
-import { Animated, Easing } from "react-native";
+import { Animated, Easing, UIManager } from "react-native";
 import React from "react";
 
 class FadeInView extends React.Component {
@@ -13,11 +13,10 @@ class FadeInView extends React.Component {
       {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
         duration: 2000,               // Make it take a while
-        // easing: Easing.back()
+        easing: Easing.back()
       }
-    ).start(({finished}) => console.log('finish', finished));                        // Starts the animation
+    ).start(({ finished }) => console.log('finish', finished));                        // Starts the animation
   }
-  
 
 
   render() {
@@ -28,7 +27,7 @@ class FadeInView extends React.Component {
       <Animated.View                 // Special animatable View
         style={{
           ...this.props.style,
-          opacity: fadeAnim,         // Bind opacity to animated value
+          opacity: 1,         // Bind opacity to animated value
           transform: [{
             translateY: fadeAnim.interpolate({
               inputRange: [0, 1],
@@ -45,5 +44,6 @@ class FadeInView extends React.Component {
 
 export default FadeInView
 
-// In JSX expressions that contain both an opening tag and a closing tag, the content between those tags is passed as a special prop: props.children.
+// In JSX expressions that contain both an opening tag and a closing tag,
+// the content between those tags is passed as a special prop: props.children.
 

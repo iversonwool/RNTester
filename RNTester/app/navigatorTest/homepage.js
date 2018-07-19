@@ -17,6 +17,9 @@ export default class Homepage extends Component {
         <TouchableOpacity style={styles.touch} onPress={() => void onPress('TouchableTester')}>
           <Text>TouchableTester</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.touch} onPress={() => void onPress('Animate')}>
+          <Text>Animate</Text>
+        </TouchableOpacity>
       </View>
     )
   }

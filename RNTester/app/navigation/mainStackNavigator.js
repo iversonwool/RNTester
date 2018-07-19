@@ -16,6 +16,7 @@ const TabStack = createBottomTabNavigator(tabStack.screens, tabStack.config)
 
 import TextInputTester from '../UITester/TextInputTester'
 import TouchableTester from '../UITester/Touchable'
+import Animate from '../Animate'
 
 export const screens = {
   Home: {
@@ -25,7 +26,8 @@ export const screens = {
     },
   },
   TextInputTester: { screen: TextInputTester },
-  TouchableTester: { screen: TouchableTester }
+  TouchableTester: { screen: TouchableTester },
+  Animate: { screen: Animate }
 }
 
 const config = {
