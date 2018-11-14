@@ -61,7 +61,8 @@ const Message = createStackNavigator({
 const screens = {
   Home: {
     navigationOptions: {
-      title: '首页',
+      //title: '首页',
+      tabBarLabel: '首页'
     },
     screen: HomePage,
   },
