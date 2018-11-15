@@ -1,7 +1,10 @@
-import { createStackNavigator } from 'react-navigation';
-import HomeScreen from './home'
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
-import DetailsScreen from './details'
+import HomeScreen from './home/home'
+import DetailsScreen from './home/details'
+
+import SettingsScreen from './settings'
+import ProfileScreen from './settings/profile'
 
 const RouteConfigs = {
   // Home: {
@@ -12,10 +15,16 @@ const RouteConfigs = {
   Home: HomeScreen,
 
 }
-
 const StackNavigatorConfig = {
   initialRouteName: 'Home'
 }
+
+const HomeStack = createStackNavigator(RouteConfigs, StackNavigatorConfig)
+
+const SettingsStack = createStackNavigator({
+  Settings: SettingsScreen,
+  Profile: ProfileScreen,
+})
 
 // the createStackNavigator function returns a React component,
 
@@ -33,6 +42,9 @@ const StackNavigatorConfig = {
 
 
 
+// export default createStackNavigator(RouteConfigs, StackNavigatorConfig);
 
-export default createStackNavigator(RouteConfigs, StackNavigatorConfig);
-
+export default createBottomTabNavigator({
+  Home: HomeStack,
+  Settings: SettingsStack,
+})
