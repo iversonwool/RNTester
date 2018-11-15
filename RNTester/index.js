@@ -5,10 +5,11 @@ import A from './app/App'
 // import
 import Navigator from './app/navigatorTest'
 
-import MainStack from './app/navigation'
+// import MainStack from './app/navigation'
 
+import NavigationTester from './app/reactnavigation'
 
 // 忽略指定黄色警告
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader', ''])
 
-AppRegistry.registerComponent('RNTester', () => MainStack)
+AppRegistry.registerComponent('RNTester', () => NavigationTester)
