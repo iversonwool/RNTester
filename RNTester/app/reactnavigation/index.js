@@ -24,7 +24,8 @@ const StackNavigatorConfig = {
   navigationOptions: {
     headerStyle: { backgroundColor: '#f4511e' },
     headerTintColor: '#fff',
-    headerTitleStyle: { fontWeight: 'bold' }
+    headerTitleStyle: { fontWeight: 'bold' },
+    headerBackTitle: '返回'
   }
 }
 
