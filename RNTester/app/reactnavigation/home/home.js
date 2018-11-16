@@ -9,7 +9,7 @@ class HomeScreen extends React.Component {
     // headerTitleStyle: { fontWeight: 'bold' }
     headerRight: (
       <Button
-        onPress={navigation.getParam('increaseCount')}
+        onPress={navigation.getParam('increaseCount', ()=>{})}
         title="+1"
         color="#fff"
       />
@@ -42,6 +42,11 @@ class HomeScreen extends React.Component {
             itemId: '9527',
             otherParam: 'Hello, Kitty!'
           })}
+        />
+        <Button
+          onPress={() => this.props.navigation.navigate('MyModal')}
+          title="show modal"
+          //color="#fff"
         />
       </View>
     );

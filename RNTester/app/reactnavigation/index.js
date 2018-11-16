@@ -7,6 +7,7 @@ import SettingsScreen from './settings'
 import ProfileScreen from './settings/profile'
 
 import NavigationEventsScreen from './api/navigationEvents'
+import ModalScreen from "./modal";
 
 const RouteConfigs = {
   // Home: {
@@ -55,7 +56,17 @@ const SettingsStack = createStackNavigator({
 
 // export default createStackNavigator(RouteConfigs, StackNavigatorConfig);
 
-export default createBottomTabNavigator({
+const TabStack = createBottomTabNavigator({
   Home: HomeStack,
   Settings: SettingsStack,
 })
+
+const RootStack = createStackNavigator({
+  Main: { screen: TabStack },
+  MyModal: { screen: ModalScreen }
+}, {
+  mode: 'modal',
+  headerMode: 'none',
+})
+
+export default RootStack
