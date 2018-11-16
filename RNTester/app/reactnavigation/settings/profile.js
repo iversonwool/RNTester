@@ -1,13 +1,19 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 
+import FocusStateLabel from '../api/withNavigationFocus'
+
 class Profile extends React.Component {
 
   componentDidMount() {
     const { navigation } = this.props
-    navigation.addListener('willFocus', (v) => {
+    this.didBlurSubscription = navigation.addListener('willFocus', (v) => {
       console.log(v)
     })
+  }
+
+  componentWillUnmount() {
+    this.didBlurSubscription.remove()
   }
 
   render() {
@@ -19,6 +25,15 @@ class Profile extends React.Component {
           title="Back"
           onPress={() => this.props.navigation.pop()}
         />
+        <Button
+          title="go to navigation events"
+          onPress={() => this.props.navigation.push('NavigationEvents')}
+        />
+        <Button
+          title="go to details"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
+        <FocusStateLabel/>
       </View>
     );
   }

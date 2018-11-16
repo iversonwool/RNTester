@@ -6,6 +6,8 @@ import DetailsScreen from './home/details'
 import SettingsScreen from './settings'
 import ProfileScreen from './settings/profile'
 
+import NavigationEventsScreen from './api/navigationEvents'
+
 const RouteConfigs = {
   // Home: {
   //   screen: HomeScreen
@@ -16,7 +18,14 @@ const RouteConfigs = {
 
 }
 const StackNavigatorConfig = {
-  initialRouteName: 'Home'
+  initialRouteName: 'Home',
+
+  // Sharing common navigationOptions across screens
+  navigationOptions: {
+    headerStyle: { backgroundColor: '#f4511e' },
+    headerTintColor: '#fff',
+    headerTitleStyle: { fontWeight: 'bold' }
+  }
 }
 
 const HomeStack = createStackNavigator(RouteConfigs, StackNavigatorConfig)
@@ -24,6 +33,8 @@ const HomeStack = createStackNavigator(RouteConfigs, StackNavigatorConfig)
 const SettingsStack = createStackNavigator({
   Settings: SettingsScreen,
   Profile: ProfileScreen,
+  NavigationEvents: NavigationEventsScreen,
+  Details: DetailsScreen,
 })
 
 // the createStackNavigator function returns a React component,
@@ -39,7 +50,6 @@ const SettingsStack = createStackNavigator({
 //     return <RootStack />;
 //   }
 // }
-
 
 
 // export default createStackNavigator(RouteConfigs, StackNavigatorConfig);
