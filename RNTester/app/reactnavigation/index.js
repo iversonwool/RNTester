@@ -39,6 +39,19 @@ const SettingsStack = createStackNavigator({
   Details: DetailsScreen,
 })
 
+// this is a way to hide the bottom bar
+//
+// SettingsStack.navigationOptions = ({ navigation }) => {
+//   console.log(navigation)
+//   let tabBarVisible = true
+//   if (navigation.state.index > 0) {
+//     tabBarVisible = false
+//   }
+//   return {
+//     tabBarVisible
+//   }
+// }
+
 // the createStackNavigator function returns a React component,
 
 // const RootStack = createStackNavigator({
@@ -61,12 +74,21 @@ const TabStack = createBottomTabNavigator({
   Settings: SettingsStack,
 })
 
+// const SStack = createStackNavigator({
+//   Main: { screen: TabStack },
+//   Details: DetailsScreen,
+//   Profile: ProfileScreen,
+//   NavigationEvents: NavigationEventsScreen,
+// })
+
+// this way is recommended
 const RootStack = createStackNavigator({
   Main: { screen: TabStack },
-  MyModal: { screen: ModalScreen }
+  MyModal: { screen: ModalScreen },
 }, {
   mode: 'modal',
   headerMode: 'none',
 })
 
 export default RootStack
+// export default SStack

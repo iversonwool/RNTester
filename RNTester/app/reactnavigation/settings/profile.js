@@ -8,7 +8,7 @@ class Profile extends React.Component {
   componentDidMount() {
     const { navigation } = this.props
     this.didBlurSubscription = navigation.addListener('willFocus', (v) => {
-      console.log(v)
+      console.log('willFocus')
     })
   }
 
