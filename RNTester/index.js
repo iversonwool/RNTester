@@ -11,7 +11,9 @@ import NavigationTester from './app/reactnavigation'
 
 import Hide from './app/hideTabBar'
 
+import Drawer from './app/reactnavigation/drawer'
+
 // 忽略指定黄色警告
 YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader', ''])
 
-AppRegistry.registerComponent('RNTester', () => Hide)
+AppRegistry.registerComponent('RNTester', () => Drawer)
